@@ -1,0 +1,3 @@
+<span class="icon-star" [id]="'star-'+cocktail.id" [ngClass]="{ 'active': cocktail.isFavourite }" >
+    <button class="btn btn-link" (click)="setFav(cocktail)"></button>
+</span>

@@ -1,0 +1,28 @@
+<div class="row">
+  <h2>Filters</h2>
+  <app-search-bar [items]="items" (filteredItems)="filterCocktails($event)"></app-search-bar>
+</div>
+
+<div class="row">
+  <div class="col-6" *ngFor="let item of filteredItems, index as i">
+
+      <div class="card mt-2 mb-2"> 
+        <div class="row g-0"> 
+          <div class="col-3">
+            <img class="img-fluid" [src]="item.imageUrl" alt="{{item.name}}">
+          </div>
+          <div class="col-9 p-2">
+            <div class="row">
+              <a class="col-10" (click)="getCocktailDetails(item.id)">{{ item.name }}</a> 
+              <app-fav-item class="col-2 text-end" [items]="items" [cocktail]="item"></app-fav-item>
+            </div>
+            <div class="row">
+              <p class="col-12 m-2" [ngClass]="item.isAlcoholic ? 'alcoholic mb-1' : 'non-alcoholic mb-1'">{{ item.isAlcoholic ? 'Alcoholic' : 'Non Alcoholic' }}</p>
+              <p class="col-12 mt-2">{{ item.ingredients.join(' | ') }}</p>
+            </div>
+          </div>
+        </div> 
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,27 @@
+mat-icon-button {
+    background-color: none;
+}
+
+.alcoholic {
+    background-color: lightblue;
+    max-width: 80px;
+}
+
+.non-alcoholic {
+    background-color: lightgreen;
+    max-width: 130px;
+}
+
+.alcoholic, .non-alcoholic {
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.bi.bi-house, .btn.btn-link {
+    color: black;
+}
+
+.btn.btn-link {
+    text-decoration: none;
+}

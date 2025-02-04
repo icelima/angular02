@@ -1,0 +1,28 @@
+<div>
+    <button class="btn btn-link" aria-label="Back" (click)="backHome()"><i class="bi bi-house"></i> Back</button>
+</div>
+<div class="row">
+    
+    <div class="col-6">
+        <img [src]="item.imageUrl" alt="{{item.name}}" class="card-img">
+    </div>
+
+    <div class="col-6">
+        <div class="row">
+            <h1 class="col-6">{{ item.name }}</h1> 
+            <app-fav-item class="col-2 text-end pt-3" [items]="items" [cocktail]="item"></app-fav-item>
+        </div>
+        <div class="row">
+            <b class="col-4">Type:</b>
+            <div class="col-8">
+                <p [ngClass]="item.isAlcoholic ? 'alcoholic' : 'non-alcoholic'">{{item.isAlcoholic ? 'Alcoholic' : 'Non Alcoholic'}}</p>
+            </div>
+            <b class="col-4">Ingredients:</b>
+            <ul class="col-8">
+                <li *ngFor="let ingredients of item?.ingredients">{{ ingredients }}</li>
+            </ul> 
+            <b class="col-4">Instructions:</b> <p class="col-8">{{ item.instructions }}</p>
+        </div>
+        
+    </div>
+</div>
